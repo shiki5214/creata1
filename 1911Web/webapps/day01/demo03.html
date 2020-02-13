@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- src路径 
+	1.相对路径：访问站内资源时使用
+		a.资源文件和页面在同一目录：直接写图片名
+		b.资源文件在页面的上级目录：../图片名
+		c.资源文件在页面的下级目录：文件夹名/图片名
+	2.绝对路径：访问万站外资源时使用，访问其他网站资源称为图片盗链，好处节省本网站资源，坏处有可能找不到图片
+ -->
+ <!-- alt图片不能正常显示时显现的文本
+ 	  title：当鼠标在图片上悬停时显示的文本
+ 	  width/height 1.像素赋值  2.上级元素百分比赋值(会跟着缩放)
+ 	  只赋值宽度 高度会等比例缩放
+  -->
+ <img  alt="动漫图片" src="1a.jpg">
+<img width="500" height="500"  title="猫耳" src="1.jpg">
+<img width="500"  src="../2.jpg">
+<img width="50%"  src="abc/3.jpg">
+<img  src="../imgs/1.jpg">
+<img  src="http://cdn.tmooc.cn/bsfile//courseImg///4d7bdc3c80db40bdb2d81ffdbb4788df.jpg">
+</body>
+</html>

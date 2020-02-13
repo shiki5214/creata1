@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="d1"></div>
+  <script type="text/javascript">
+  var x=0;
+  var timer=setInterval(function(){
+  		//alert("测试");
+  		//控制台输出
+  		console.log(x++);
+  		 if(x==5){
+  			  //停止定时器
+  			  clearInterval(timer);
+  		  }
+  	},1000);
+ 	//开启只执行一次的定时器
+ 	setTimeout(function(){
+ 		//alert("时间到！");
+ 		//d1.innerText="<h1>时间到</h1>";
+ 		//如果需要显示标签信息 则使用innerHTML
+ 		//d1.innerHTML="<h1>时间到</h1>";
+ 		//d1.innerHTML="<img src='../imgs/1.jpg'>";
+ 	},3000);
+ 	var count=0;
+ 	var t=setInterval(function(){
+ 		count++;
+ 		d1.innerHTML+="<img src='../imgs/1.jpg'>";
+ 		if(count==3){
+ 			clearInterval(t);
+ 		}
+ 	},2000);
+  </script>
+</body>
+</html>

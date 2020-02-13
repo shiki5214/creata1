@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" onkeydown="downfn()" onkeyup="upfn()">
+<script type="text/javascript">
+//event事件对象  可以获取和事件相关的信息 keyCode按键编码
+	function downfn(){
+		console.log("键盘按下"+event.keyCode);
+	}
+	function upfn(){
+		//把键盘编码转成字符
+		console.log("键盘抬起"+String.fromCharCode(event.keyCode));
+	}
+</script>
+</body>
+</html>

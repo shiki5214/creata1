@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>订单列表</h3>
+<input type="checkbox" value="20">鼠标20元<br>
+<input type="checkbox" value="80">键盘80元<br>
+<input type="checkbox" value="5000">华为手机5000元<br>
+<input type="checkbox" value="2000">小米手机2000元<br>
+<input type="checkbox" id="all">全选<br>
+<p>总价：0元</p>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//给所有的多选框添加点击事件
+	$("input").click(function(){
+		//判断全选this代表点击的多选框
+		if(this.id=="all"){
+			//得到全选的选中状态
+			var status=$(this).attr("checked");
+			//得到全选的状态给其他几个多选框
+			//先得到其他几个多选框
+			$(this).siblings("input").attr("checked",status);
+		}
+		//计算总价
+		//得到所有商品的多选框
+		var total=0;
+		var count=0;
+		$("input:not(#all)").each(function(){
+			//this代表变量的每个多选框
+			//判断多选框是否选中 如果为true说明打钩了
+			//attr取出属性
+			if($(this).attr("checked")){
+			count++;
+				//得到当前商品的价格
+				var money=$(this).val();
+				
+				total +=money*1;
+				
+			}
+		});
+			$("#all").attr("checked",count==4?true:false);
+			//把总价显示到p标签中
+				$("p").text("总价："+total+"元");
+	});
+</script>
+</body>
+</html>

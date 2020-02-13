@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="button" value="按钮" id="b1">
+<div id="d1"></div>
+<!-- script标签如何引入了文件则不能在标签体继续写代码
+如果需要写 再创建一个script标签
+ -->
+<script type="text/javascript" 
+src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//给按钮添加点击事件
+	$("#b1").click(function(){
+		//取出文本框的值并弹出  $("#i1"）得到文本框对象
+		alert($("#i1").val());
+		
+	});
+</script>
+
+</body>
+</html>

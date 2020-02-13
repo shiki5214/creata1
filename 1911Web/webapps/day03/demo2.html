@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  body>div{
+    width:200px;
+    height:200px;
+    background-color: red;
+    /*解决粘连问题*/
+    overflow: hidden;
+  }
+  div div{
+    width:50px;
+    height:50px;
+    background-color: green;
+    margin-left: 50px;
+    /*当元素的上边缘和上级元素的上边缘重叠时 给元素添加上外边距
+    会出现粘连显示异常，解决方案：给上级元素添加overflow: hidden;
+    */
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+<div>
+  <div></div>
+</div>
+</body>
+</html>

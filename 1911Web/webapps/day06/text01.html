@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <div id="d1">0</div>
+  <input type="button" value="开始" onclick="tart()" >
+   <input type="button" value="结束" onclick="stop()">
+   
+   <script type="text/javascript">
+   	var a=0;
+   	var timer;
+   	function tart(){
+   		timer=setInterval(function(){
+  		d1.innerHTML=a++;
+  		
+  		},50);
+   	}
+   	function stop(){
+   		
+   		clearInterval(timer);
+   		if(a==100){
+  			alert("免单成功");
+  		}else{
+  			alert("免单失败");
+  		}
+   		d1.innerHTML=0;
+   	}
+   </script>
+</body>
+</html>

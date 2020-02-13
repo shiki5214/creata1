@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<ul>
+  <li >亲戚
+    <ul>
+      <li>习大大</li>
+      <li>老干妈</li>
+      <li>马大姐</li>
+    </ul>
+  </li>
+   <li>女友们
+    <ul>
+      <li>貂蝉</li>
+      <li>武则天</li>
+      <li>两仪式</li>
+    </ul>
+  </li>
+   <li>同事
+    <ul>
+      <li>马云</li>
+      <li>马化腾</li>
+      <li>任正非</li>
+    </ul>
+  </li>
+</ul>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//得到所有的二层ul并且隐藏
+	$("li>ul").hide();
+	$("body>ul>li").click(function(){
+		//多个元素统一添加事件，事情中this.代表当前出发事件的元素对象（js对象）
+		//得到当前点击li里面的ul
+		$(this).children().toggle(); 
+		//得到点击li以为的其他两个li里面的ul
+		$(this).siblings().children().hide();
+	});
+	
+
+</script>
+</body>
+</html>

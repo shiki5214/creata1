@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  body{
+    background-image: url("../zombimgs/bg1.jpg");
+    /* background-color: 300px 200px; */
+    overflow: hidden;  /* 超出不显示 去掉拖动条 */
+  }
+  img{
+    position: absolute;/*修改绝对定位 因为要控制僵尸在页面任意位置  */
+    width:60px;
+    height: 60px;
+  }
+  #s_h3{
+    float: left;
+  }
+  #f_h3{
+    float: right;
+  }
+</style>
+</head> 
+<body>
+<h3 id="s_h3">成功数量：0</h3>
+<h3 id="f_h3">失败数量：0</h3>
+<script src="../js/jquery-1.4.2.js"></script>
+  <script type="text/javascript">
+  //记录成功失败数量
+  	var sCount=0;
+  	var fCount=0;
+ 	//获取窗口的宽高
+  	var w=$(window).width();
+  	var h=$(window).height();
+  	//把宽高设置到图片上
+  	$("body").css("background-size",w+"px "+h+"px");
+  	//窗口尺寸改变事件
+  	onresize=function(){
+  	 	//获取窗口的宽高
+  	  	w=$(window).width();
+  	  	h=$(window).height();
+  	  	//把宽高设置到图片上
+  	  	$("body").css("background-size",w+"px "+h+"px");
+  	}
+  	//定时器
+  	var timer=setInterval(function(){
+  		//创建图片
+  		var type=parseInt(sCount/20);
+  		if(type>3){
+  			type=3;
+  		}
+  		var img=$("<img src='../zombimgs/zomb"+type+".png'>");
+  		var left=w;
+  		var top=parseInt(Math.random()*(h-60));
+  		img.css({"left":left+"px","top":top+"px"});
+  		$("body").append(img);
+  		//给僵尸图片添加鼠标移入事件
+  		img.mouseover(function(){
+  			img.remove();
+  			sCount++;//成功次数➕1
+  			$("#s_h3").text("成功数量："+sCount);
+  		});
+  	},100);
+  	//开启定时器移动所有僵尸图片
+  	setInterval(function(){
+  		//得到所有的僵尸并遍历
+  		$("img").each(function(){
+  		//得到僵尸原来的left值  this点当前遍历的元素
+  		var oldLeft=parseInt($(this).css("left"));
+  		//每消灭20个僵尸 移动速度+1
+  		oldLeft -=(1+parseInt(sCount/30));//让原来的值减1
+  		//把心left值赋值给当前遍历的僵尸图片
+  		$(this).css("left",oldLeft+"px");
+  		///如果僵尸移动到房子位置则删除僵尸
+  		if(oldLeft<=100){
+  			$(this).remove();
+  			fCount++;//失败次数+1
+  			$("#f_h3").text("失败数量："+fCount);
+  			
+  			if(fCount>=20){
+  				if(confirm("游戏结束！重新开始吗")){
+  				//点击圈定会执行以下代码
+  				location.reload();
+  				}
+  				//删除所有的僵尸
+  				$("img").remove();
+  				/* fCount=0;
+  				sCount=0;
+  				$("#f_h3").text("失败数量："+fCount);
+  				$("#s_h3").text("成功数量："+sCount);
+  				alert("游戏结束"); */
+  				//停止添加僵尸的定会器
+  				clearInterval(timer);
+  			}
+  		}
+  		});
+  	},10);
+  </script>
+</body>
+</html>

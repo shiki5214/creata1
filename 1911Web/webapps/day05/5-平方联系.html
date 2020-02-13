@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" id="d1">
+<input type="button" value="平方" onclick="myfn()">
+<div id="d2"></div>
+<script type="text/javascript">
+	function myfn(){
+		//parseInt(d1.value)把字符串转成数值 d1.value*1等效
+		d2.innerText=d1.value*d1.value;
+	}
+
+</script>
+</body>
+</html>

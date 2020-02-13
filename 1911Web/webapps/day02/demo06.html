@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ div{
+ /*把块元素改成行内元素*/
+  display:inline-block;
+  width:100px;
+  height:100px;
+  background-color: red;
+ }
+ span{
+  background-color: blue;
+  /*行内元素不能修改宽高*/
+  /*修改成块级元素*/
+  display:block;
+ }
+ img{
+  width:200px;
+  height:200px;
+ }
+</style>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<span>s1</span>
+<span>s2</span>
+<span>s3</span>
+<img  src="../imgs/1.jpg">
+<img  src="../imgs/1.jpg">
+<img  src="../imgs/1.jpg">
+</body>
+</html>

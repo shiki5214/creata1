@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <div>
+    <input type="text" placeholder="第一个数" id="num1" size="6">+ <input
+      type="text" placeholder="第二个数" id="num2" size="6"> <input
+      type="button" id="sum" value="提交">
+  </div>
+  <hr>
+  <table id="ta">
+    <tr>
+      <td>题目</td>
+      <td>答案</td>
+    </tr>
+  </table>
+  <input type="button"  value="提交" id="d">
+  <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+  <script type="text/javascript">
+			$("#sum").click(function() {
+						var t1 = $("#num1").val();
+						var t2 = $("#num2").val();
+						if (t1.length > 0 && t2.length > 0 && !isNaN(t1)
+								&& !isNaN(t2)) {
+							var $row = $("<tr>" +
+									"<td>" + t1 + "</td>"
+									+ "<td>+</td>" + "<td>" + t2 + "</td>"
+									+ "<td>=</td>"
+									+ "<td><input type='text'  size='6'></td>"
+									+ "</tr>");
+							$("#ta").append($row);
+						}
+						
+					});
+			var count=0;
+			 $("#d").click(function(){
+				$("#ta tr:gt(0)").each(function(){
+					//$o是当前tr对象
+					var $o=$(this);
+					var nn1=$o.children("td:eq(0)").html();
+					var nn2=$o.children("td:eq(2)").html();
+					var rr=nn1*1+nn2*1;
+					var inputr=$o.children("td:eq(4)").children("input").val();
+					if(rr=inputr){
+						count++;
+					}
+				});
+				alert("您一共答对"+count+"题");
+				count=0;
+			});
+		</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<select>
+  <option>请选择</option>
+  <option value="0">河北</option>
+  <option value="1">山东</option>
+  <option value="2">北京</option>
+</select>
+<select>
+  <option>请选择</option>
+</select>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	
+	//保存城市信息的数组
+	var arr=[["石家庄","秦皇岛","唐山"],
+	         ["济南","青岛","烟台"],
+	         ["朝阳区","海淀区","大兴区"]];
+	$("select:first").change(function(){
+		//覆盖掉原有内容 起到清空的作用
+		$("select:last").html("<option>请选择</option>");
+		//给第一个下啦选添加值改变事件
+		var cities=arr[$("select:first").val()];
+		//alert(cities);
+		//遍历数组
+		for(var i=0;i<cities.length;i++){
+			//得到每一个城市名称
+			var cityName=cities[i];
+			//创建option对象
+			var o=$("<option></option>");
+			//给option设置显示文本
+			o.text(cityName);
+			$("select:last").append(o);
+		}
+	});
+</script>
+</body>
+</html>

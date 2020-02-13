@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 子孙后代选择器 匹配div里面所有的span*/
+ /* div div span{
+    color:red;
+  }*/
+  /* 子元素选择器 匹配body里面div里面的子元素span*/
+  body>div>span{
+    color:red;
+  }
+  body>span{
+    color:yellow;
+  }
+  /*伪类选择器*/
+  a:visited{/*访问过*/
+    color:red;
+  }
+  a:link{/*未访问*/
+    color:yellow;
+  }
+  a:hover{/*悬停*/
+    color:blue;
+  }
+  a:active{/*点击*/
+    color:green;
+  }
+  *{
+  /*任意元素选择器*/
+  border:1px solid red;
+  }
+</style>
+</head>
+<body>  
+   <a href="../imgs/1.jpg">超链接1</a>
+   <a href="../imgs/2.jpg">超链接2</a>
+   <a href="../imgs/3.jpg">超链接3</a>
+   <a href="../imgs/4.jpg">超链接4</a>
+   <br>
+  <span>s1</span>
+  <div>
+    <span>s2</span>
+    <div>
+      <span>s3</span>
+    </div>
+  </div>
+  <div>
+    <span>s4</span>
+  </div>
+</body>
+</html>

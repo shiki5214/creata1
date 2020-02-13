@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- action提交路径 -->
+	<form action="http://www.tmooc.cn">
+	<!-- 文本框 placeholder占用文本 value默认值  -->
+		用户名：<input type="text" name="username"
+			placeholder="请输入用户名" 
+			value="刘德华"
+		 > <br>
+		 <!-- 单选框 value替换提交过去的no  checked默认选中-->
+		密码：<input type="password" name="pwd"><br>
+		性别：<input type="radio" name="gender" value="m" checked="checked" id="m">
+		<label for="m">男</label>
+		<input type="radio" name="gender" value="f" id="f">
+		<label for="f">女</label>
+		 <br>
+		 <!-- 多选框 -->
+		 爱好：<input type="checkbox" name="hoby" value="cy">抽烟
+		 <input type="checkbox" name="hoby" value="hj">喝酒
+		 <input type="checkbox" name="hoby" checked="checked" value="tt">烫头<br>
+		 <!-- 日期选择器 -->
+		 生日：<input type="date" name="birthday"><br>
+		 <!-- 文件选择器 -->
+		 靓照：<input type="file" name="pic"><br>
+		 <!-- 下啦框  默认选中selected -->
+		 所在城市：<select name="city">
+		 	<option value="bj">北京</option>
+		 	<option value="sh" selected="selected">上海</option>
+		 	<option value="gz">广州</option>
+		 </select><br>
+		<input type="submit"  value="注册">
+		<input type="reset">
+		<input type="button"  value="无效按钮">
+	</form>
+</body>
+</html>

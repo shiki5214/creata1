@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+h5{
+	color:green;
+}
+/*给所有h4添加样式*/h4{
+	color:blue;
+	}	

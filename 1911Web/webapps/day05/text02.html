@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <div id="d1"></div>
+  <div id="op"></div>
+  <div id="d2"></div>
+  =
+  <input id="i1" size="4">
+  </div>
+  <br>
+  <input type="button" id="res" value="判卷" onclick="fn()">
+  <div id="d3"></div>
+  <script type="text/javascript">
+			var x = parseInt(Math.random() * 10 + 1);
+			d1.innerText = x;
+			var y = parseInt(Math.random() * 10 + 1);
+			d2.innerText = y;
+			var a = [ "+", "-", "*", "➗" ];
+			var o = parseInt(Math.random() * 4);
+			op.innerText = a[o];
+
+			var r = i1.value;
+			var n;
+			function fn() {
+				switch (o) {
+				case 0:
+					n = x + y;
+					break;
+
+				case 1:
+					n = x - y;
+					break;
+
+				case 2:
+					n = x * y;
+					break;
+
+				case 3:
+					n = parseInt(x/y);
+					break;
+				}
+				if (i1.value==n) {
+					d3.innerText = "答对了";
+				} else {
+					d3.innerText = "答错了";
+				}
+			}
+		</script>
+</body>
+</html>

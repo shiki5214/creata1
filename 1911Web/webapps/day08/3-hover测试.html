@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<input type="button" value="按钮" onclick="alert('事件触发')"> 
+<script  type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	setTimeout(function(){
+		//事件模拟
+		$("input").trigger("click");
+	},3000);
+/*移入移出合并方法	鼠标  */
+	$("div").hover(function(){//鼠标移入
+		$(this).css("color","red");
+	},function(){//鼠标移出
+		$(this).css("color","green");
+	});
+</script>
+</body>
+</html>

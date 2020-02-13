@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>AAA</div>
+<div>BBB</div>
+<div>CCC</div>
+
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	var d=$("<div>测试内容</div>");
+	//添加到最后面
+	//$("body").append(d);
+	//添加到最前面
+	//$("body").prepend(d);
+	//插入元素到某个元素的前面
+	//$("div:contains('BBB')").before(d);
+	//插入元素到某个元素的后面
+	$("div:contains('BBB')").after(d);
+	//删除元素 remove（）
+	$("div:contains('AAA')").remove();
+</script>
+</body>
+</html>

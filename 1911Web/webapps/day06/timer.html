@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="txt">0</div>
+	<input type="button" value="开始" onclick="timerstart()">
+	<input type="button" value="停止" onclick="timerstop()">
+	<script type="text/javascript">
+		var num=0;
+		var timer;
+		function timerstart(){
+			timer=setInterval(function(){
+				num++;
+				txt.innerHTML=num;
+			},50)
+		}
+		function timerstop(){
+			clearInterval(timer);
+			if(num==100){
+				alert("恭喜您免单!")
+			}else{
+				alert("您还是得付钱!")
+			}
+			num=0;
+		}
+	</script>
+</body>
+</html>

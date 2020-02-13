@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+	用户输入两个数字,点击添加增加到题目列表中<br>
+	实现细节:<br>
+	1.题目列表是table表格结构<br>
+	2.用户输入的必须是数字,不是数字点击添加没有效果<br>
+	3.正确添加题目到题目列表中,每题占一行<br>
+	4.添加有清除输入框中的数字<br>
+	
+	<div>
+		<input type="text" placeholder="第一个数" 
+		id="inputnum1" size="6">
+		+ 
+		<input type="text" placeholder="第二个数" 
+		id="inputnum2" size="6">
+		<input type="button" id="additem" value="添加">
+	</div>
+	<hr>
+	<table id="tablist">
+		<tr>
+			<td>题目</td>
+			<td>答案</td>
+		</tr>
+	</table>
+	<input type="button" value="提交" id="calcscore">
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		$("#additem").click(function(){
+			var n1=$("#inputnum1").val();
+			var n2=$("#inputnum2").val();
+			if(!isNaN(n1) && !isNaN(n2)){
+				var $row=$("<tr><td> <span class='s1'>"+n1+"</span> + <span class='s2'>"+n2+
+						"</span> = </td><td><input type='text' size='4'></td></tr>");
+				$("#tablist").append($row);
+				$("#inputnum1").val("");
+				$("#inputnum2").val("");
+			}
+		});
+		$("#calcscore").click(function(){
+			
+			$("#tablist>tr").each(function(){
+				
+				var $obj=$(this);
+				var r=$obj.children(".s1").html();
+				alert(r)
+			})
+			
+			
+			
+			
+		});
+	</script>
+</body>
+</html>

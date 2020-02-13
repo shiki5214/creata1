@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<!-- 通过按钮调用声明的方法 -->
+<input type="button" value="按钮" onclick="fn1()">
+<script type="text/javascript">
+	/*js多行注释*/
+	//单行
+	//声明无参无返回值方法
+	function fn1(){
+		alert("fn1执行")
+	}
+	//调用和java一样
+	//fn1();
+	//声明无参有返回值
+	function fn2(){
+		return"fn2返回值";
+	}
+	//var s=fn2();
+	//alert(s);
+	
+	//声明有参无返回值方法
+	function fn3(name,age){
+		alert(name+":"+age);
+	}
+	//调用
+	//fn3("张飞",18);
+	
+	//声明有参返回值方法
+	function fn4(x,y){
+		return x*y;
+	}
+		//var result=fn4(4,9);
+		//alert(result);
+		
+		//第二种声明方法
+		var fn5=function(name,age){
+			alert(name+":"+age);
+		}
+		//fn5("关羽",19);
+		
+		//第三种声明方法
+		var fn6=new Function("name","age","alert(name+':'+age)");
+		fn6("刘备",20);
+</script>
+</body>
+</html>

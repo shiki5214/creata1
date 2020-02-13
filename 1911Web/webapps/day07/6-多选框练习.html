@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="checkbox">
+<input type="button" value="按钮">
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+//给按钮添加点击事件
+	$("input:last").click(function(){
+		//让多选框选中
+		//$("input:first").attr("checked",true);
+		//取出多选框的状态如果true  则赋值为false 反之则为true
+		/* if($("input:first").attr("checked")){
+			$("input:first").attr("checked",false);
+		}else{
+			$("input:first").attr("checked",true);
+		} */
+		//三目运算
+	/* 	$("input:first").attr("checked",
+				$("input:first").attr("checked")?false:true); */
+		//取反的方式
+		$("input:first").attr("checked",!$("input:first").attr("checked"));
+	});
+</script>
+</body>
+</html>
